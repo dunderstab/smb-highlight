@@ -1,0 +1,89 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SembleLang",
+	"patterns": [
+		{
+			"include": "#multilineComments"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#chars"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.smb",
+				"match": "\\b(free|bank|const|as|def|new|struct|break|true|false|if|for|return|fn|let|=>|#include|#program|i8|from|to|asm|quit|endfor|endif|while|endwhile)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.smb",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.smb",
+					"match": "\\\\."
+				}
+			]
+		},
+		"chars": {
+			"name": "string.quoted.double.smb",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.smb",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "number.smb",
+			"patterns": [
+				{
+					"name": "numberconsts.smb",
+					"match": "\\d+"
+				}
+			]
+		},
+		"comments": {
+			"name": "string.quoted.double.smb",
+			"begin": "//",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.smb",
+					"match": "\\\\."
+				}
+			]
+		},
+		"multilineComments": {
+			"name": "string.quoted.double.smb",
+			"begin": "~",
+			"end": "~",
+			"patterns": [
+				{
+					"name": "constant.character.escape.smb",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.smb"
+}

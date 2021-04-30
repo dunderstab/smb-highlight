@@ -1,0 +1,25 @@
+{
+    "name": "semble",
+    "displayName": "Semble",
+    "description": "Semble Programming Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "smb",
+            "aliases": ["SembleLang", "smb"],
+            "extensions": [".smb"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "smb",
+            "scopeName": "source.smb",
+            "path": "./syntaxes/smb.tmLanguage.json"
+        }]
+    }
+}
